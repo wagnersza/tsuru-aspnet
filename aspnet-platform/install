@@ -1,0 +1,25 @@
+#!/bin/bash -el
+
+# Copyright 2015 tsuru authors. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+SOURCE_DIR=/var/lib/tsuru
+source ${SOURCE_DIR}/base/rc/config
+
+mkdir -p /home/application
+useradd -m ${USER} -s /bin/bash
+chown ${USER}:${USER} /home/application
+
+apt-get update
+apt-get install curl sudo rsync netcat-openbsd net-tools telnet vim-tiny lsof -y --force-yes
+
+echo "${USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+echo "deb http://ppa.launchpad.net/tsuru/ppa/ubuntu trusty main" >> /etc/apt/sources.list
+apt-get update
+apt-get install deploy-agent -y --force-yes
+
+mkdir -p ${SOURCE_DIR}/default
+
+echo "export DEBIAN_FRONTEND=noninteractive" >> /etc/profile

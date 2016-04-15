@@ -1,0 +1,1 @@
+web: /opt/dnx/runtimes/default/bin/dnx -p project.json web --server.urls http://*:$PORT

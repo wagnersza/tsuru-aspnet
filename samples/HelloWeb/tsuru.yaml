@@ -1,0 +1,4 @@
+hooks:
+ build:
+   - cd /home/application/current
+   - /opt/dnx/runtimes/default/bin/dnu restore
