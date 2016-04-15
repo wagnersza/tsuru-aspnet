@@ -2,14 +2,14 @@
 
 ## Install
 
-  $ git clone https://github.com/wagnersza/tsuru-aspnet.git
-  $ cd tsuru-aspnet/aspnet-platform
+    $ git clone https://github.com/wagnersza/tsuru-aspnet.git
+    $ cd tsuru-aspnet/aspnet-platform
 
-  $ tsuru-admin platform-add aspnet -d .
-    or
-  $ tsuru-admin platform-add aspnet -i wagnersza/aspnet
+    $ tsuru-admin platform-add aspnet -d .
+      or
+    $ tsuru-admin platform-add aspnet -i wagnersza/aspnet
 
 ## Deploy sample
 
-  $ cd tsuru-aspnet/samples/HelloWeb
-  $ tsuru app-deploy . -a < minha_app >
+    $ cd tsuru-aspnet/samples/HelloWeb
+    $ tsuru app-deploy . -a < minha_app >
